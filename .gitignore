@@ -1,0 +1,9 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# VSCode settings
+.vscode/
+
+# Screenshot placeholder
+screenshot.png 

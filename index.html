@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aziel's photo booth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>PhotoBooth</h1>
+            <p>Capture your moments in style</p>
+        </header>
+        <div class="photobooth">
+            <!-- Step 1: Capture Photos -->
+            <div id="capture-step" class="step active">
+                <div class="step-header">
+                    <h2>Step 1: Strike a Pose</h2>
+                    <p>A 3-second countdown will start for each shot.</p>
+                </div>
+                <div class="video-container">
+                    <video id="video" autoplay></video>
+                    <div id="flash-overlay"></div>
+                    <div id="countdown" class="countdown"></div>
+                </div>
+                <div class="controls">
+                    <button id="snap" class="button primary-action">Take Photo (<span id="photo-counter-display">0</span>/3)</button>
+                </div>
+                <div class="photos" id="photos"></div>
+            </div>
+
+            <!-- Step 2: Design Frame -->
+            <div id="design-step" class="step">
+                <div class="step-header">
+                    <h2>Step 2: Customize Your Strip</h2>
+                    <p>Add a personal touch to your photos.</p>
+                </div>
+                <div class="preview-container">
+                     <canvas id="photostrip-canvas"></canvas>
+                </div>
+                <div class="design-controls">
+                    <div class="control-group">
+                        <label for="frame-color">Frame Color</label>
+                        <input type="color" id="frame-color" value="#ffffff">
+                    </div>
+                    <div class="control-group">
+                        <label for="frame-width">Border Size</label>
+                        <input type="range" id="frame-width" min="0" max="50" value="10">
+                    </div>
+                </div>
+                 <div class="controls">
+                    <button id="done-designing" class="button primary-action">Next Step</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Download -->
+            <div id="download-step" class="step">
+                 <div class="step-header">
+                    <h2>Step 3: All Done!</h2>
+                    <p>Your photostrip is ready. Download it or start over.</p>
+                </div>
+                <div id="final-result" class="result">
+                </div>
+                <div class="controls action-group">
+                    <a id="download" class="button primary-action" style="display: none;">Download Photo</a>
+                    <button id="start-over" class="button secondary-action">Start Over</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
